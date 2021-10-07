@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React ,{useState} from 'react';
 import './App.css';
-
+import InputSample from './InputSample';
 
 
 function App() {
@@ -10,11 +9,12 @@ function App() {
 
   var fontSize = { color : 'white', fontSize : '30px'}
 
-  
+
   /**
    * 문자, 숫자, array, object 모두 저장 가능하다. 
    * useState 를 써야 하는 이유 : 새로고침 없이도 HTML 이 자동으로 재렌더링 된다. 
    */
+
   let [글제목, 글제목변경] = useState(['남자 코트 추천', '강남 우동맛집', '파이썬 독학']);
   let [count, setCount] = useState(0);
   
@@ -56,6 +56,11 @@ function App() {
 
       <Modal></Modal>
 
+      <Hello color="red" name="react" />
+
+      <InputSample />
+
+      
       
       
     </div>
@@ -78,6 +83,14 @@ function Modal() {
     <div></div>
     </>
   )
+}
+
+/**
+ * props 를 쓰는 방법, 아래는 비구조화를 통해 props를 제거한 것
+ */
+
+function Hello({ color, name }) {
+  return <div style={{ color }}> 안녕하세요 {name}</div>
 }
 
 export default App;
