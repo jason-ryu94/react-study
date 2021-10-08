@@ -1,9 +1,35 @@
-import React ,{useState} from 'react';
+import React ,{useState, useRef} from 'react';
 import './App.css';
 import InputSample from './InputSample';
+import UserList from './test_components/UserList';
 
 
 function App() {
+
+  const users = [
+    {
+        id: 1,
+        username: 'velopert',
+        email: 'public.velopert@gmail.com'
+    },
+    {
+        id: 2,
+        username: 'tester',
+        email: 'tester@example.com'
+    },
+    {
+        id: 3,
+        username: 'liz',
+        email: 'liz@example.com'
+    }
+  ];
+
+  const nextId = useRef(4);
+  const onCreate = () => {
+
+    nextId.current += 1;
+  };
+
 
   var posts = '강남 고기 맛집 '
 
@@ -60,7 +86,7 @@ function App() {
 
       <InputSample />
 
-      
+      <UserList users={users}/>
       
       
     </div>
