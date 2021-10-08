@@ -2,7 +2,7 @@ import React ,{useState, useRef} from 'react';
 import './App.css';
 import InputSample from './InputSample';
 import UserList from './test_components/UserList';
-
+import CreateUser from './test_components/CreateUser';
 
 function App() {
 
@@ -86,7 +86,11 @@ function App() {
 
       <InputSample />
 
+      <CreateUser />
+
       <UserList users={users}/>
+
+      
       
       
     </div>
