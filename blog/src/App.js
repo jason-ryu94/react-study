@@ -82,13 +82,20 @@ function App() {
     var newArray = [...글제목];
     newArray[0] = '여자 코트 추천';
     글제목변경( newArray );
-  }
+  };
 
   function 정렬() {
     var newArray = [...글제목];
     newArray.sort();
     글제목변경( newArray );
-  }
+  };
+
+  const onToggle = id => {
+    setUsers(
+      users.map(user => 
+        user.id === id ? {...user, active: !user.active} : user)
+    )
+  };
 
   return (
     <div className="App">
@@ -125,7 +132,7 @@ function App() {
         onCreate={onCreate}
       />
 
-      <UserList users={users} onRemove={onRemove}/>
+      <UserList users={users} onRemove={onRemove} onToggle={onToggle}/>
 
       
       
