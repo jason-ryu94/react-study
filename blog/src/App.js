@@ -97,10 +97,14 @@ function App() {
     )
   };
 
+  const s1 = "the";
+  const s2 = "the";
+
   return (
+    
     <div className="App">
       <div className="black-nav">
-        <div style={ fontSize}>개발 Blog</div>
+        <div style={ fontSize}>개발자blog</div>
       </div>
       <button onClick={ 정렬 }>버튼 </button>
       <div className="llist">
@@ -133,6 +137,8 @@ function App() {
       />
 
       <UserList users={users} onRemove={onRemove} onToggle={onToggle}/>
+
+      
 
       
       
